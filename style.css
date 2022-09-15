@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+html {
+   line-height: 1.15; /* 1 */
+   -webkit-text-size-adjust: 100%; /* 2 */
+ }
+ 
+ /* Sections
+    ========================================================================== */
+ 
+ /**
+  * Remove the margin in all browsers.
+  */
+ 
+ body {
+   margin: 0;
+ }
+ 
+ /**
+  * Render the `main` element consistently in IE.
+  */
+ 
+ main {
+   display: block;
+ }
+
+:root {
+   --main-color1: rgb(91, 206, 250);
+   --main-color2: rgb(245, 169, 184);
+   --main-color3: rgb(255, 255, 255);
+ }
+
+body {
+   background-color: white;
+   color: black;
+   font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+header {
+   border-bottom: 2px solid black;
+   box-shadow: 0 1em 1em grey;
+   min-height: 25vh;
+}
+
+footer {
+   background-color: black;
+   color:white;
+   box-shadow: 0 -1em 1em grey;
+   min-height: 25vh;
+}
+
+.text-gradient {
+   /* Set the background color */
+   background: linear-gradient(var(--main-color2) 25%, var(--main-color1) 80%);
+   /* Mask the color to the text, and remove the rest  */
+   -webkit-background-clip: text;
+   /* Make the text fill color value transparent so the masked background color comes through */
+   -webkit-text-fill-color: transparent;
+ }
+
+footer, section {
+   display:grid;
+   place-items: center;
+   align-content: center;
+}
+
+main section {
+   min-height: 75vh;
+}
+
+footer section {
+   display:flex;
+}
+
+footer section div {
+   min-width: 10vw;
+   padding:1em;
+   text-align: left;   
+}
+
+.hiddenElement {
+   opacity: 0;
+   filter: blur(5px);
+   transform: translateX(-50%);
+   transition: all 1s;
+}
+
+@media(prefers-reduced-motion) {
+   .hiddenElement {
+      transition: none;
+   }
+}
+
+.showElement {
+   opacity: 1;
+   filter: blur(0);
+   transform: translateX(0);
+}
+
+.cards {
+   display: flex;
+}
+
+.card {
+   padding: 1em;
+   margin: 1em;
+   border: 2px solid black;
+   border-radius: 10%;
+   min-width: 50px;
+   min-height: 50px;
+   text-align: center;
+   box-shadow: 0 0 1em grey;   
+   background-image: conic-gradient(at -2% 50%,var(--main-color1) 20deg,var(--main-color2) 40deg 60deg,var(--main-color3) 80deg 100deg,var(--main-color2) 120deg 140deg, var(--main-color1) 160deg);
+}
+
+.card:hover {
+
+}
+
+.card:nth-child(2) {
+   transition-delay: 200ms;
+}
+
+.card:nth-child(3) {
+   transition-delay: 400ms;   
+}
+
+.card:nth-child(4) {
+   transition-delay: 600ms;   
+}
+
+.card:nth-child(5) {
+   transition-delay: 800ms;   
+}
